@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    bintrayRepo = 'android'
+    bintrayName = 'TicketView'
+
+    publishedGroupId = 'com.mclondi'
+    libraryName = 'TicketView'
+    artifact = 'ticketview'
+    libraryVersion = '1.0.0'
+    libraryDescription = 'A custom view to implement TicketView in android.'
+
+    siteUrl = 'https://github.com/MClondi/TicketView'
+    gitUrl = 'https://github.com/MClondi/TicketView.git'
+
+    developerId = 'mclondi'
+    developerName = 'Marcel J'
+    developerEmail = 'mclondi@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion sdkVersion
+
+    defaultConfig {
+        minSdkVersion minSdkVersionVersion
+        targetSdkVersion sdkVersion
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "com.android.support:support-annotations:$annotationsVersion"
+}
+
+apply from: 'https://raw.githubusercontent.com/LissF/JCenter/master/script.gradle'

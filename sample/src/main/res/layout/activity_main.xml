@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        tools:context=".MainActivity">
+
+
+
+    <com.mclondi.ticketview.TicketView
+            android:id="@+id/couponTopTicket"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="200dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:ticketBottomCornerType="scallop"
+            app:ticketCornerRadius="9dp"
+            app:ticketDividerDashGap="4dp"
+            app:ticketDividerDashLength="4dp"
+            app:ticketDividerPadding="4dp"
+            app:ticketDividerType="dash"
+            app:ticketScallopPositionPercent="50"
+            app:ticketScallopRadius="4dp"
+            app:ticketShowDivider="true"
+            app:ticketTopCornerType="rounded" >
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal"
+        android:text="TEST"/>
+
+    </com.mclondi.ticketview.TicketView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
