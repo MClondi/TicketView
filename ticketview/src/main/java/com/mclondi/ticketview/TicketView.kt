@@ -20,15 +20,16 @@ class TicketView @JvmOverloads constructor(
     init {
         if (attrs != null) {
             val typedArray = context.obtainStyledAttributes(attrs, R.styleable.TicketView)
-            val background = TicketViewBackground(typedArray, context, paddingLeft, paddingRight, paddingTop, paddingBottom)
+            background = TicketViewBackground(typedArray, context, paddingLeft, paddingRight, paddingTop, paddingBottom)
             val stateList = ColorStateList(
                 arrayOf(intArrayOf()),
                 intArrayOf(context.resources.getColor(android.R.color.white))
             )
             setBackground( RippleDrawable( stateList, background,null ))
             typedArray.recycle()
+        } else {
+            background = null
         }
-        background = null
 
         setLayerType(View.LAYER_TYPE_SOFTWARE, null)
     }
@@ -38,6 +39,7 @@ class TicketView @JvmOverloads constructor(
         set(value) {
             field = value
             background?.ticketBackgroundDrawable = value
+            invalidate()
         }
 
 

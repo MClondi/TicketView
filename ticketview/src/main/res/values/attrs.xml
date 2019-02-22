@@ -44,10 +44,6 @@
         <attr name="ticketCornerRadius" format="dimension" />
 
 
-        <attr name="ticketPerforationBackgroundColor" format="color" />
-        <attr name="ticketPerforationBackgroundDrawable" format="reference" />
-        <attr name="ticketPerforationPositionPercent" format="float" />
-
     </declare-styleable>
 
 </resources>
