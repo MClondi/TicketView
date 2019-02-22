@@ -2,6 +2,7 @@ package com.mclondi.ticketview
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.RippleDrawable
 import android.util.AttributeSet
 import android.view.View
@@ -11,6 +12,8 @@ import androidx.annotation.IntDef
 class TicketView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr)  {
+
+    val background : TicketViewBackground?
 
 
 
@@ -25,9 +28,17 @@ class TicketView @JvmOverloads constructor(
             setBackground( RippleDrawable( stateList, background,null ))
             typedArray.recycle()
         }
+        background = null
 
         setLayerType(View.LAYER_TYPE_SOFTWARE, null)
     }
+
+
+    var ticketBackgroundDrawable: Drawable? = null
+        set(value) {
+            field = value
+            background?.ticketBackgroundDrawable = value
+        }
 
 
     companion object {
